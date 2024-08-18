@@ -479,8 +479,15 @@ publishing {
                 }
                 url "https://maven.pkg.github.com/" + "${System.env.GITHUB_REPOSITORY}".toLowerCase()
             }
-        } else {
-            mavenLocal()
+        }
+        mavenLocal()
+        maven {
+            allowInsecureProtocol true
+            url = "http://localhost:5001/repository/maven-snapshots/"
+            credentials {
+                it.username = "admin"
+                it.password = "dev123456"
+            }
         }
     }
 }
