@@ -3,6 +3,7 @@ plugins {
 }
 
 android {
+    namespace "loader"
     compileSdkVersion COMPILE_SDK_VERSION
 
     defaultConfig {
