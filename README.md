@@ -1,3 +1,9 @@
+# 兼容运行 
+https://github.com/Tencent/Shadow/issues/1263
+```bash
+gradlew :sample-host:installDebug
+```
+
 # Shadow
 
 ![Android CI](https://github.com/Tencent/Shadow/workflows/Android%20CI/badge.svg?event=push)
