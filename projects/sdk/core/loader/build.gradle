@@ -25,12 +25,10 @@ compileKotlin {
     kotlinOptions {
         jvmTarget = "1.8"
         noJdk = true
-        noStdlib = true
     }
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     testImplementation "junit:junit:$junit_version"
 
     implementation 'com.tencent.shadow.coding:java-build-config'

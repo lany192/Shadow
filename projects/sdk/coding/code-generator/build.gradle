@@ -1,7 +1,6 @@
 apply plugin: 'kotlin'
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "com.squareup:javapoet:$javapoet_version"
     implementation "org.javassist:javassist:$javassist_version"
     implementation "junit:junit:$junit_version"
@@ -11,12 +10,18 @@ dependencies {
 }
 
 compileKotlin {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
 }
 
 compileTestKotlin {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
     kotlinOptions {
         jvmTarget = "1.8"
     }

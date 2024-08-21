@@ -11,12 +11,10 @@ compileKotlin {
     kotlinOptions {
         jvmTarget = "1.8"
         noJdk = true
-        noStdlib = true
     }
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.tencent.shadow.core:loader'
     compileOnly 'com.tencent.shadow.core:activity-container'
     compileOnly 'com.tencent.shadow.core:common'
