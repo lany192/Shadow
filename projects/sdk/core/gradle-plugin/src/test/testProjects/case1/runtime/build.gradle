@@ -3,6 +3,7 @@ plugins {
 }
 
 android {
+    namespace "runtime"
     compileSdkVersion COMPILE_SDK_VERSION
 
     defaultConfig {

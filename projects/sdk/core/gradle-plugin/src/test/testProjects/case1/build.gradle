@@ -40,6 +40,7 @@ allprojects {
 ext.disable_shadow_transform = true
 
 android {
+    namespace "app"
     compileSdkVersion COMPILE_SDK_VERSION
 
     defaultConfig {

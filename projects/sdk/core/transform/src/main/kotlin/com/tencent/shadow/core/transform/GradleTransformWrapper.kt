@@ -36,7 +36,12 @@ abstract class GradleTransformWrapper @Inject constructor(@Internal val classTra
     @get:OutputFile
     abstract val output: RegularFileProperty
 
-    @TaskAction
+    init {
+        doLast {
+            taskAction()
+        }
+    }
+
     fun taskAction() {
         val inputs: List<TransformInput> = allDirectories.get().map {
             TransformInputImpl(it.asFile, TransformInput.Kind.DIRECTORY)

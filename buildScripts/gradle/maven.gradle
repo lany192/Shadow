@@ -85,8 +85,8 @@ def sourceJar(String name, String path) {
         description = "package ${name} source to jar"
         from "$path/src/main/java"
         from "$path/src/main/kotlin"
-        destinationDir = file("$path/build/libs/")
-        classifier = 'sources'
+        destinationDirectory = file("$path/build/libs/")
+        archiveClassifier = 'sources'
     }
 }
 
@@ -479,8 +479,19 @@ publishing {
                 }
                 url "https://maven.pkg.github.com/" + "${System.env.GITHUB_REPOSITORY}".toLowerCase()
             }
-        } else {
-            mavenLocal()
+        }
+        mavenLocal()
+        maven {
+            allowInsecureProtocol true
+            url = "http://localhost:5001/repository/maven-snapshots/"
+            credentials {
+                it.username = "admin"
+                it.password = "dev123456"
+            }
+        }
+        maven {
+            name = 'mavenCustom'
+            url = "${rootProject.rootDir}/repository"
         }
     }
 }
